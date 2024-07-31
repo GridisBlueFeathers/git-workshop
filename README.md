@@ -1,18 +1,19 @@
-# JUL 2024 Piscine Git Workshop
+# JUL 2024 PISCINE GIT WORKSHOP
 
-## Table of Contents
+# Table of Contents
 - [What is Git?](#what-is-git)
-    - [What is a version control system](#what-is-a-version-control-system)
-- [What is a repository](#what-is-a-repository)
+    - [What is a Version Control System](#what-is-a-version-control-system)
+- [What is a Repository?](#what-is-a-repository)
 - [Tracking](#tracking)
-- [Staging area](#staging-area)
+- [Staging Area](#staging-area)
 - [Commiting](#commiting)
-- [Rinse and repeat](#rinse-and-repeat)
-- [Pushing to a remote repository](#pushing-to-a-remote-repository)
-    - [Connecting SSH keys](#connecting-ssh-keys)
+- [Rinse and Repeat](#rinse-and-repeat)
+- [Pushing to a Remote Repository](#pushing-to-a-remote-repository)
+    - [Connecting SSH Keys](#connecting-ssh-keys)
+    - [How to use Github](#how-to-use-github)
 
-## What is Git?
-**Git** is a **version control system**. According to the creator of Git and what is written in Git's own repo's first commit
+# What is Git?
+**Git** is a **Version Control System**. According to the creator of Git and what is written in Git's own repo's first commit
 ```
 GIT - the stupid content tracker
 
@@ -28,21 +29,21 @@ GIT - the stupid content tracker
  - "goddamn idiotic truckload of sh*t": when it breaks
 ```
 
-### What is a version control system?
-A **version control system** is a **system** that **controls versions** of your project. So that, for example, if your project got a new feature, and it started to break something, it would be possible to go back to a stable version.
+### What is a Version Control System?
+A **Version Control System** is a **system** that **controls versions** of your project. So that, for example, if your project got a new feature, and it started to break something, it would be possible to go back to a stable version.
 
-### Why use Git
-Git is very verbose. On each action Git usually gives a lot of information on what just happened, or if **Git** doesn't like something, it usually would output the problem desctiption and potentially how to solve it.
+### Why use Git?
+Git is very verbose. On each action Git usually gives a lot of information on what just happened, or if **Git** doesn't like something, it usually would output the problem description and potentially how to solve it.
 Git also makes collaboration on projects easier through branches and merges.
 
-## What is a repository?
-On a basic level, a repository is just a directory on a computer, that has `.git` subdirectory in it. `.git` directory is a storage of commits and other information that **Git** tracks.
+## What is a Repository?
+On a basic level, a **repository** is just a directory on a computer, that has `.git` subdirectory in it. `.git` directory is a storage of commits and other information that **Git** tracks.
 
 There are two methods to create a repository:
 - `init`ialise a repository in a directory
 - `clone` an existing **remote** repository
 
-Once you have your repository, you can start adding files to it
+Once you have your repository, you can start adding files to it.
 
 ## Tracking
 One of the main things that **Git** does is tracking files, and changes in files. If you just `init`ialised a repository it won't have any files that **Git** would track, so when you add a file to your **working directory** and do `git status`, you will see a message like:
@@ -52,9 +53,9 @@ Untracked files:
         new_file
 ```
 
-In order to start tracking changes in a file, you will need to add it to the **stagind area**, this is done using `git add <file>` command.
+In order to start tracking changes in a file, you will need to add it to the **staging area**, this is done using `git add <file>` command.
 
-## Staging area
+## Staging Area
 **Staging area** is a middleground between your files being just raw files without any kind of history and changes in your files being compiled in a **commit**. When you `git add`ed some files, you will be able to see what will be compiled in a **commit** using `git status` again.
 ```
 Changes to be committed:
@@ -80,7 +81,7 @@ nothing to commit, working tree clean
 
 It means that since the last commit there were no changes to tracked files, and that there are no new untracked yet files in **working directory**.
 
-## Rinse and repeat
+## Rinse and Repeat
 So, now **Git** tracks `new_file` file. If we will edit this file to have new information in it and do another `git status`, we will see this
 ```
 On branch master
@@ -94,5 +95,28 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 It means that in our **staging area** there is nothing new that is ready to be commited, but since **Git** tracks our file, **Git** detected changes in the file (since the last **commit**), and it now *suggests* us to add those new changes, in order to create a new *snapshot* of a file
 
-## Pushing to a remote repository
-### Connecting SSH keys
+## Pushing to a Remote Repository
+### Connecting SSH Keys
+If you are on a computer where you didn't generate an **SSH key** yet, start by creating an SSH key in your Terminal by typing `ssh-keygen`.\
+After doing this *or* if you already did this on the campus computer, continue like this:
+1. Go to your Home directory
+2. Next go to your `.ssh` folder:
+   - Show Hidden Files in the Settings at the top to find it (when using the File Explorer)
+   - Type `cd .ssh/` (when using the Terminal)
+3. Copy the contents of `id_rsa.pub` (Your **PUBLIC KEY**!)
+
+Now that we have our public ssh key, we can move on to:
+### How to use Github
+1. Add your Public SSH Key to your Github:
+    - https://github.com/settings/keys
+    - Click on `New SSH key`
+2. Create your first Repository:
+   - Go to the *Your Repositories* page
+   - Click on `New`
+3. Now click on the `<> Code` Button and copy the SSH(!) key
+
+Finally, do `git clone <ssh key>` in your Terminal (make sure it's somewhere you can find it again)\
+and now you can work on your projects.
+
+(If you are interested in more advanced options like **pushing to two remote repositories** or having **submodules**, check out [my quick guide](https://github.com/CottonKiwii/42_CommonCore/blob/main/How_To_Git_Gud.md)\
+or [a longer tutorial by another 42 student](https://github.com/francisrafal/42-connect-multiple-remotes-tutorial)!)
