@@ -4,14 +4,6 @@
 - [What is Git?](#what-is-git)
     - [What is a version control system](#what-is-a-version-control-system)
 - [What is a repository](#what-is-a-repository)
-    - [Opening Vim](#opening-vim)
-    - [Modal model](#modal-model)
-- [Vim motions and commands](#vim-motions-and-commands)
-    - [Vim motions for movement](#vim-motions-for-movement)
-        - [Horizontal movement](#horizontal-movement)
-        - [Vertical movement](#vertical-movement)
-        - [Search](#search)
-    - [Vim commands](#vim-commands)
 
 ## What is Git?
 **Git** is a **version control system**. According to the creator of Git and what is written in Git's own repo's first commit
@@ -31,7 +23,7 @@ GIT - the stupid content tracker
 ```
 
 ### What is a version control system?
-A **version control system** is a **system** that **controls verions** of your project. So that, for example, if your project got a new feature, and it started to break something, it would be possible to go back to a stable version.
+A **version control system** is a **system** that **controls versions** of your project. So that, for example, if your project got a new feature, and it started to break something, it would be possible to go back to a stable version.
 
 ### Why use Git
 Git is very verbose. On each action Git usually gives a lot of information on what just happened, or if **Git** doesn't like something, it usually would output the problem desctiption and potentially how to solve it.
