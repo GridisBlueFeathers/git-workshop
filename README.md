@@ -35,3 +35,35 @@ On a basic level, a repository is just a directory on a computer, that has `.git
 There are two methods to create a repository:
 - `init`ialise a repository in a directory
 - `clone` an existing **remote** repository
+
+Once you have your repository, you can start adding files to it
+
+## Tracking
+One of the main things that **Git** does is tracking files, and changes in files. If you just `init`ialised a repository it won't have any files that **Git** would track, so when you add a file to your **working directory** and do `git status`, you will see a message like:
+```
+Untracked files:
+    (use "git add <file>..." to include in what will be committed)
+        new_file
+```
+
+In order to start tracking changes in a file, you will need to add it to the **stagind area**, this is done using `git add <file>` command.
+
+## Staging area
+**Staging area** is a middleground between your files being just raw files without any kind of history and changes in your files being compiled in a **commit**. When you `git add`ed some files, you will be able to see what will be compiled in a **commit** using `git status` again.
+```
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   new_file
+```
+
+## Commiting
+Now, we are ready to create a **commit**. Run `git commit -m <meaningful message>` command, and you will see a following message:
+```
+[master (root-commit) 80a3cb8] initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_file
+```
+
+In this message you can see `master` is a name of a branch in which we created this **commit**, `(root-commit)` which means that there were no previous commits in this repository, `80a3cb8` or most likely some other hash of your commit, `initial commit` is a commit message that you left, `1 file changed, 0 insertions(+), 0 deletions(-)` is what happened since the last commit and `create mode 100644 new_file` is more detailed file by file description of what actually changed.
+
+## Rinse and repeat
