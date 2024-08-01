@@ -96,6 +96,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 It means that in our **staging area** there is nothing new that is ready to be commited, but since **Git** tracks our file, **Git** detected changes in the file (since the last **commit**), and it now *suggests* us to add those new changes, in order to create a new *snapshot* of a file
 
 ## Pushing to a Remote Repository
+Now that we have some commits in our repository, we can push it to a **remote** repository, in order to do that, you need to have (or create) an account at a platform such as Github, Gitlab or any other that you like more. In order to set up a **remote** repository, follow these steps
+
 ### Connecting SSH Keys
 If you are on a computer where you didn't generate an **SSH key** yet, start by creating an SSH key in your Terminal by typing `ssh-keygen`.\
 After doing this *or* if you already did this on the campus computer, continue like this:
@@ -113,6 +115,7 @@ Now that we have our public ssh key, we can move on to:
 2. Create your first Repository:
    - Go to the *Your Repositories* page
    - Click on `New`
+   - Chose a name, description (optional) and visibility of your repository
 3. Now click on the `<> Code` Button and copy the SSH(!) key
 
 Finally, do `git clone <ssh key>` in your Terminal (make sure it's somewhere you can find it again)\
