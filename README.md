@@ -136,13 +136,13 @@ and then push using the remote name
     git push <name>
 ```
 
-By default, git doesn't know where to push changes from **local** repository, to push, we need to add information about which **remote** repository and branch we want to push to, by typing:
+By default, git doesn't know where to push changes from the **local** repository. To push, we need to add information about which **remote** repository and branch we want to push to, by typing:
 - `git push <name> <branch-name>`
 
-And if you want to set a default *upstream*, so that git will know where to push in case if you write just `git push`, you can set it using following:
+And if you want to set a default *upstream*, so that git will know where to push, when you write just `git push`, you can set it using the following:
 - `git push --set-upstream <name> <branch-name>`
 
-Note that this *upstream* is set for each branch separately, so if you set it for `main` it doesn't mean that it will be able to `git push` from `dev` branch!
+Note that this *upstream* is set for each branch separately, so if you set it for `main` it doesn't mean that it will be able to `git push` from the `dev` branch!
 
 (If you are interested in more advanced options like **pushing to two remote repositories** or having **submodules**, check out [my quick guide](https://github.com/CottonKiwii/42_CommonCore/blob/main/How_To_Git_Gud.md)\
-or [a longer tutorial by another 42 student](https://github.com/francisrafal/42-connect-multiple-remotes-tutorial)!)
+or [a tutorial by another 42 student](https://github.com/francisrafal/42-connect-multiple-remotes-tutorial)!)
