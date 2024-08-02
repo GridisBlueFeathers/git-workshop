@@ -136,7 +136,7 @@ and then push using the remote name
     git push <name>
 ```
 
-By default, git doesn't know where to push changes from local repository, to push, we need to add information about which **remote** repository and branch we want to push to, by typing:
+By default, git doesn't know where to push changes from **local** repository, to push, we need to add information about which **remote** repository and branch we want to push to, by typing:
 - `git push <name> <branch-name>`
 
 And if you want to set a default *upstream*, so that git will know where to push in case if you write just `git push`, you can set it using following:
