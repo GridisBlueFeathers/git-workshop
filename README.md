@@ -121,10 +121,10 @@ Now that we have our public ssh key, we can move on to:
 
 ### How to connect the Local and Remote Repository
 For this, you have two options on what you can do:
-- Do `git clone <ssh key> <name>` in your Terminal to create a local repository that's immediately connected to the remote repository on Github
-- If you already have a local repository, do `git remote add <name> <ssh key>` to connect it to the remote repository on Github
+- If you want to get a **local** copy of a **remote** repository, do `git clone <ssh key> <name>` in your Terminal to create a **local** repository that's immediately connected to the **remote** repository on Github
+- If you want to connect an existing **local** repository to a **remote** repository, do `git remote add <name> <ssh key>` to connect it to the **remote** repository on Github
 
-In case of the second option, you will get this message if you try to `git push`:
+In case of the second option, you will get this message if you try to just `git push`:
 ```
 fatal: No configured push destination.
 Either specify the URL from the command-line or configure a remote repository using
@@ -136,11 +136,13 @@ and then push using the remote name
     git push <name>
 ```
 
-To push, we need to add information about which repository and branch we want to push to, by typing:
+By default, git doesn't know where to push changes from local repository, to push, we need to add information about which **remote** repository and branch we want to push to, by typing:
 - `git push <name> <branch-name>`
 
-And if you want to be able to just write `git push`, you can type:
+And if you want to set a default *upstream*, so that git will know where to push in case if you write just `git push`, you can set it using following:
 - `git push --set-upstream <name> <branch-name>`
+
+Note that this *upstream* is set for each branch separately, so if you set it for `main` it doesn't mean that it will be able to `git push` from `dev` branch!
 
 (If you are interested in more advanced options like **pushing to two remote repositories** or having **submodules**, check out [my quick guide](https://github.com/CottonKiwii/42_CommonCore/blob/main/How_To_Git_Gud.md)\
 or [a longer tutorial by another 42 student](https://github.com/francisrafal/42-connect-multiple-remotes-tutorial)!)
